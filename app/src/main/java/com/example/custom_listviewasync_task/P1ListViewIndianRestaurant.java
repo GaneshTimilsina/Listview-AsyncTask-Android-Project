@@ -78,7 +78,6 @@ public class P1ListViewIndianRestaurant extends AppCompatActivity {
                                 dialogInterface.cancel();
 
 
-
                             }
                         }).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
@@ -93,20 +92,10 @@ public class P1ListViewIndianRestaurant extends AppCompatActivity {
                 });
 
 
-
-
-                /*
-                Toast.makeText(getApplicationContext(), "Delete Item" + i, Toast.LENGTH_SHORT).show();
-                arrayList.remove(i);
-                customViewAdapter.notifyDataSetChanged();
-                return true;
-
-                 */
-
                 AlertDialog dialog = alertBuilder.create();
                 dialog.setTitle("Do you want to Delete item?");
                 dialog.show();
-            return true;
+                return true;
             }
         });
 
@@ -125,5 +114,11 @@ public class P1ListViewIndianRestaurant extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Long Press on Item to Delete Item", Toast.LENGTH_LONG).show();
         }
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(P1ListViewIndianRestaurant.this, MainActivity.class));
     }
 }
